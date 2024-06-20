@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NINTENDO GIFTING</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+	<script src="fbf.js"></script>
+</head>
+<body>
+	<!--
+	want to showcase the nintendo creative
+	one side with the funnel to show the sort of levels / audience segmentatio
+	bit of a write up
+	want a drop down or click on to load ad into iframe correctly
+
+	-->
+		<style>
+			body {background-color: fff; font-family:roboto; 
+
+        background-image: none, url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxmaWx0ZXIgaWQ9ImEiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIxLjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjYSkiIHN0eWxlPSJvcGFjaXR5Oi4yIi8+PC9zdmc+);
+   
+
+			}
+			h1   {color: #ffc737;font-size:50px; line-height: 48px;}
+			h2 	{color: #ffc737;font-size:20px; line-height: 19px;}
+			
+			#wrap { padding:20px 20px; margin:30px 30px; border-radius:20px; background-color:#000; overflow:auto; 
+				       background-image: none, url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxmaWx0ZXIgaWQ9ImEiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIxLjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjYSkiIHN0eWxlPSJvcGFjaXR5Oi4yIi8+PC9zdmc+);
+			}
+			#preview { border:0; }
+			.threecol { /*background-color:#345;*/  margin-left:2%; float:left; width:30%; color:#fff; font-size:12px; line-height: 16px;}
+			#middle{width:300px;}
+
+			/*table*/
+			.tg  {border-collapse:collapse;border-spacing:0; background-color: #fff; color:#000;}
+			.tg td{border-color:black;border-style:solid; border-width:1px;font-size:14px;
+			  overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{font-size:14px;
+			  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-0lax{text-align:left;vertical-align:top; }
+
+			.HARDWARE, .MARIOKART{cursor: pointer;}
+			.HARDWARE:hover , .MARIOKART:hover{background-color: #666;}
+			.HARDWARE:active {background-color: #fff;}
+
+
+			#gradone{
+				background: rgb(135,253,29);
+				background: linear-gradient(0deg, rgba(135,253,29,1) 0%, rgba(0,255,231,1) 100%);
+			}
+			#gradtwo{
+				background: rgb(255,231,0);
+				background: linear-gradient(0deg, rgba(255,231,0,1) 0%, rgba(135,253,29,1) 100%);
+			}
+			#gradthree{
+				background: rgb(253,29,29);
+				background: linear-gradient(0deg, rgba(253,29,29,1) 0%, rgba(255,231,0,1) 100%);
+			}
+
+
+			#intro{border-radius: 10px; background-color: #fff;}
+			#middleone{text-align: center;}
+
+			#iframe-carousel {
+ 
+  width: 300px; /* Adjust width as needed */
+  height: 2000px; /* Adjust height as needed */
+  overflow: hidden; /* Hide overflowing iframes */
+}
+
+#bannerbox{
+	width: 300px;
+	height:600px;
+	overflow: hidden;
+}
+
+.iframe {
+  float:left;
+  
+  width: 300px;
+  height: 600px;
+  border:0px;
+
+  margin-bottom: 20px;
+  background: #fff;
+  
+ }
+
+ #one {
+
+ }
+
+ #two {
+ 		
+ }
+
+ #three {
+ 	
+ 
+ }
+/*
+.iframe:nth-child(2) {
+  opacity: 1; 
+  z-index: 2; 
+}*/
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center buttons vertically */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  cursor: pointer;
+}
+
+.arrow.prev {
+  left: 10px; /* Left arrow position */
+}
+
+.arrow.next {
+  right: 10px; /* Right arrow position */
+}
+
+
+#banner_show{
+	width:800px;
+	height:800px;
+	border: 1px solid #444;
+}
+
+#buttonhouse{
+	position: relative;
+	bottom:0;
+	width:50%;
+}
+
+.adpath{
+	float:left;
+	display: block;
+	width:150px;
+	background-color: none;
+	margin-bottom: 5px;
+	border: 1px solid #ffc737;
+	padding:10px;
+	cursor:pointer;
+	color:#ffc737;
+}
+.adpath:hover{
+	background-color: #ffc737;
+
+	color:#000!important;
+}
+
+#buttonhouse{
+	width:200px;
+	height:500px;
+	/*background-color: #998;*/
+}
+
+	</style>
+	<div id="wrap">
+
+
+
+<div class="threecol">
+<div class="intro">
+	<h1>Create your perfect Christmas bundle with Nintendo UK</h1>
+	
+To put Nintendo, and namely Amiibos! front of mind for Christmas, Nintendo UK approached us to see what we could do within Digital Display.
+	<br /><br />
+	We created a digital display journey that started with the tease of the Amiibo collection, then when engaged, they would be retargeted to be encouraged to create their perfect Nintendo bundle.
+	<br /><br />
+	The neat thing was users could select items in the digital display unit that would then drop into the gift box below. Users then click out from the banner onto a Nintendo splash page in which users could see their bundle listed ready to purchase or send the "wishlist" to their loved ones for a little gift hint.
+	<br /><br />
+If the bundle was abandoned on site, the user would be retargeted with a reminder ad, to squeeze another possible conversion.
+	<br /><br />
+	
+	<br /><br />
+</div>
+</div>
+
+
+<div class="threecol" id="middle">
+	<div id="bannerbox">
+	<div id="iframe-carousel">
+	<iframe src="ADS/STAGE1/GAME/index.html" scrolling="no"  id="one" class="iframe" allow="cross-origin"></iframe>
+	<iframe src="ADS/STAGE2/GAME/index.html" scrolling="no" id="two" class="iframe" allow="cross-origin"></iframe>
+	<iframe src="ADS/STAGE3/index.html" scrolling="no" id="three" class="iframe" allow="cross-origin"></iframe>
+	
+	</div>
+</div>
+
+</div>
+<div class="threecol">
+		<!--<br /><br />	<br /><br />	<br /><br />	<br /><br />	<br /><br />	<br /><br />
+			<br /><br />	<br /><br />	<br /><br />	<br /><br />	<br /><br />	<br /><br />
+				<br /><br />	<br /><br />	<br /><br />	-->
+	
+<div id="buttonhouse">
+	<h2>Click on the buttons below to view the creative</h2>
+  <div id="tease" onclick="moveBanner(0)" class="adpath">1. TEASE</div>
+ 
+  <div id="bundle"onclick="moveBanner(1)" class="adpath">2. BUILD A BUNDLE</div>
+ 
+  <div id="retarg"onclick="moveBanner(2)" class="adpath">3. RETARGETED REMINDER</div>
+
+  <div id="info">
+
+  </div>
+</div>
+
+</div>
+<script type="text/javascript">
+
+//set up the carousel stuff
+// want the sdie onees smaller
+
+
+const ifone = document.getElementById("one");
+const	iftwo	= document.getElementById('two');
+const ifthree = document.getElementById("three")
+
+const ifcar = document.getElementById("iframe-carousel")
+
+const tease = document.getElementById("tease");
+const	bundle	= document.getElementById('bundle');
+const retarg = document.getElementById("retarg")
+
+function moveBanner(num)
+{
+	 gsap.to(ifcar,{duration:0.5, y:(20*num+(num*600))*-1});
+
+	 tease.style.cssText = "background-color:none!important;color:#ffc737;";
+	 bundle.style.cssText = "background-color:none!important;color:#ffc737;";
+	 retarg.style.cssText = "background-color:none!important;color:#ffc737;";
+
+	 if(num == 0)
+	 {
+	 	console.log("banner one")
+	 		ifone.src = "ADS/STAGE1/GAME/index.html";
+	 		tease.style.cssText = "background-color:#ffc737!important;color:#000!important;";
+	 } else if(num == 1)
+	 {
+	 	iftwo.src = "ADS/STAGE2/GAME/index.html";
+	 	bundle.style.cssText = "background-color:#ffc737!important;color:#000!important;";
+	 } else if(num == 2)
+	 {
+	 	ifthree.src = "ADS/STAGE3/index.html";
+	 	retarg.style.cssText = "background-color:#ffc737!important;color:#000!important;";
+	 } else {
+
+	 }
+
+
+	 
+	// gsap.set(iftwo,{scale:0.7});
+	// gsap.set(ifthree,{scale:0.7});
+}
+
+
+
+
+//tidyup();
+
+
+
+
+
+
+
+
+/*
+  const tableCells = document.querySelectorAll('table.tg tbody td');
+  const previewIframe = document.getElementById("preview");
+  const mpupreviewIframe = document.getElementById("mpupreview");
+  const recordActivity = new Array();
+
+
+
+  tableCells.forEach(cell => {
+    cell.addEventListener('click', function() {
+      const cellContent = this.textContent;
+      const cellClass = this.className.split(" ")[1]; // This will be empty for cells without an id
+      const rowId = this.parentNode.id; // Get parent row's id
+
+      console.log(`Cell Content: ${cellContent}, Cell ID: ${cellClass}, Row ID: ${rowId}`);
+
+      if (cellClass === null || cellClass === undefined || cellClass === "") {
+      		console.log("shouldn't do anything")
+			} else {
+      	 recordActivity.push(this);
+     		 console.log(recordActivity);
+     		 updateTable();
+     		 this.style.cssText = "background-color:#900; color:#fff;";
+        previewIframe.src = `DC_DYNAMIC_ROUTE/?${cellClass}_${rowId}/${cellContent}/300x600/html`;
+      }
+      console.log(`DC_DYNAMIC_ROUTE/?${cellClass}_${rowId}/${cellContent}/300x600/html`)
+       
+
+      
+    });
+  });
+
+  function updateTable()
+  {
+  	for (var i = 0; i < recordActivity.length-1; i++) {
+  		recordActivity[i].style.cssText = "background-color:#777!important;";
+  	}
+  }
+*/
+
+</script>
+</body>
+</html>
